@@ -11,8 +11,8 @@ function formSubmit(event) {
     console.log(formData);
     event.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
-    formData[refs.input.name] = '';
-    formData[refs.textarea.name] = ''; 
+    // formData[refs.input.name] = '';
+    // formData[refs.textarea.name] = ''; 
 }
 function formInput(e) {
   formData[e.target.name] = e.target.value;
@@ -25,6 +25,7 @@ function reloadForm() {
     if (doneData.email) {
       refs.input.value = doneData.email;
       formData[refs.input.name] = doneData.email;
+      console.log(formData[refs.input.name])
     }
     if (doneData.message) {
       refs.textarea.value = doneData.message;
