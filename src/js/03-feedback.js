@@ -21,7 +21,7 @@ function formInput(e) {
 function reloadForm() {
   const savedData = localStorage.getItem(STORAGE_KEY);
   const doneData = JSON.parse(savedData);
-
+  if (savedData) {
     if (doneData.email) {
       refs.input.value = doneData.email;
       formData[refs.input.name] = doneData.email;
@@ -30,7 +30,7 @@ function reloadForm() {
       refs.textarea.value = doneData.message;
       formData[refs.textarea.name] = doneData.message;
     }
-
+  }
 }
 reloadForm();
 refs.form.addEventListener('submit', formSubmit);
